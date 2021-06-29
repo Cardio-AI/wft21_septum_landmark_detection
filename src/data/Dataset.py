@@ -493,6 +493,7 @@ def get_trainings_files(data_path, fold=0, path_to_folds_df='data/raw/gcn_05_202
     y_train = sorted(filter_files_for_fold(y, patients_train))
     x_test = sorted(filter_files_for_fold(x, patients_test))
     y_test = sorted(filter_files_for_fold(y, patients_test))
+    print("this is the output of get_training_files. Good luck:" + str(x_train), str(y_train), str(x_test), str(y_test))
 
     assert (len(x_train) == len(y_train)), 'len(x_train != len(y_train))'
     logging.info('Selected {} of {} files with {} of {} patients for training fold {}'.format(len(x_train), len(x),

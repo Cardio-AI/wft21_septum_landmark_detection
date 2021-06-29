@@ -131,19 +131,20 @@ def dice_coef_rv(y_true, y_pred):
     y_true = y_true[...,-3]
     return dice_coef(y_true, y_pred)
 
-def dice_coef_myo(y_true, y_pred):
+def dice_coef_lower(y_true, y_pred): #LA_changed from myo
     y_pred = y_pred[...,-2]
     y_true = y_true[...,-2]
     return dice_coef(y_true, y_pred)
 
-def dice_coef_lv(y_true, y_pred):
+def dice_coef_upper(y_true, y_pred): ##LA_changed from LV
     y_pred = y_pred[...,-1]
     y_true = y_true[...,-1]
     return dice_coef(y_true, y_pred)
 
 
 # ignore background score
-def dice_coef_labels(y_true, y_pred):
+# LA: combination of all channels that are being used, not a seperate third metric. 
+def dice_coef_labels(y_true, y_pred): 
 
     # ignore background, slice from the back to work with and without background channels
     y_pred = y_pred[...,-3:]
