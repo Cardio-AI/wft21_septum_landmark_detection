@@ -43,7 +43,7 @@ Project Organization
 Praktikum Data-Science in der Medizin
 ------------ 
 We used Google-Colab for our Evaluation Script. In the `notebooks` folder you will find the main notebooks we used, in `src` you will find functions from the Code Base.
-A huge thanks to Sven Köhler for his kind supervision, help and code. 
+A huge thanks to Sven Köhler for his kind supervision, help and code. ✨ 🌟 💫
 ### Evaluation-Script for Interobserver Variability and Variability between Predictions and Ground-Truth
 #### Link to Google Colab: https://colab.research.google.com/drive/1-wiDHzgGkPV13ZMaZLkvk5IYZSi6U5qm?usp=sharing
 ------------
