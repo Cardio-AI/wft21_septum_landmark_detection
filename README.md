@@ -15,21 +15,19 @@ Project Organization
     │   ├── predicted      <- Model predictions, will be used for the evaluations
     │   └── raw            <- The original, immutable data dump.
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks. 
-    │   ├── Dataset        <- call the dataset helper functions, analyze the datasets
-    │   ├── Evaluate       <- Evaluate the model performance, create plots
-    │   ├── Predict        <- Use the models on new data
+    │   ├── Dataset        <- call the dataset helper functions, to analyze and slice the Dataset
+    │   ├── Evaluate       <- See further below, reference to google-colab
+    │   ├── Predict        <- Generate predictions for each fold
     │   ├── Train          <- Train a new model
-    │   └── Test_IO        <- IO tests
-    │   └── Test_Models    <- Tensorflow functional or subclassing tests
     │
     ├── exp            <- Generated analysis as HTML, PDF, LaTeX, etc. Saved locally, if axes is needed , let us know
     │   ├── configs        <- Experiment config files as json
     │   ├── figures        <- Generated graphics and figures to be used in reporting
     │   ├── history        <- Tensorboard trainings history files
-    │   ├── models             <- Trained and serialized models, model predictions, or model summaries
+    │   ├── models         <- Trained and serialized models, model predictions, or model summaries
+    │   ├── models.png     <- Model summary as picture
     │   └── tensorboard_logs  <- Generated graphics and figures to be used in reporting
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
