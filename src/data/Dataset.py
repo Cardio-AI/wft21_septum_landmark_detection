@@ -432,6 +432,49 @@ def create_2d_slices_from_3d_volume_files(img_f, mask_f, export_path):
 
     return [frame, list(img_3d.shape)]
 
+def create_2d_slices_from_3d_volume_files_new_naming(img_f, mask_f, export_path):
+    """
+    Helper for ACDC data
+    
+    Expects an 3d-image and -mask file name and a target path
+    filter mask and image volumes with segmentation
+    copy all metadata
+    save them to the destination path
+    :param img_f:
+    :param mask_f:
+    :param full_path:
+    :return:
+    """
+
+    logging.info('process file: {}'.format(img_f))
+
+    # get sitk images
+    if not mask_f:
+        masks_given = False
+        mask_f = img_f
+
+    mask_3d_sitk = sitk.ReadImage(mask_f)
+    img_3d_sitk = sitk.ReadImage(img_f)
+
+    # filter 4d image nda according to given mask nda
+
+    mask_3d = sitk.GetArrayFromImage(mask_3d_sitk)
+    img_3d = sitk.GetArrayFromImage(img_3d_sitk)
+
+    # get patient_name
+    patient_name = os.path.basename(img_f).split('_')[0]
+    frame = os.path.basename(img_f).split('frame')[1][:2]
+    # create z x 2d slices
+    for z, slice_2d in enumerate(zip(img_3d, mask_3d)):
+        # create filenames with reference to t and z position
+        img_file = '{}__t{}_z{}_{}{}'.format('f_' + patient_name, str(frame), str(z), 'img', '.nrrd')
+        mask_file = '{}__t{}_z{}_{}{}'.format('f_' + patient_name, str(frame), str(z), 'msk', '.nrrd')
+
+        # save nrrd file with metadata
+        copy_meta_and_save(slice_2d[0], img_3d_sitk, os.path.join(export_path, img_file))
+        copy_meta_and_save(slice_2d[1], img_3d_sitk, os.path.join(export_path, mask_file))
+
+    return [frame, list(img_3d.shape)]
 
 def get_patient(filename_to_2d_nrrd_file):
     """
@@ -493,7 +536,7 @@ def get_trainings_files(data_path, fold=0, path_to_folds_df='data/raw/gcn_05_202
     y_train = sorted(filter_files_for_fold(y, patients_train))
     x_test = sorted(filter_files_for_fold(x, patients_test))
     y_test = sorted(filter_files_for_fold(y, patients_test))
-    print("this is the output of get_training_files. Good luck:" + str(x_train), str(y_train), str(x_test), str(y_test))
+    #print("This is the output of get_training_files!" + str(x_train), str(y_train), str(x_test), str(y_test))
 
     assert (len(x_train) == len(y_train)), 'len(x_train != len(y_train))'
     logging.info('Selected {} of {} files with {} of {} patients for training fold {}'.format(len(x_train), len(x),
