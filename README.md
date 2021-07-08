@@ -25,7 +25,7 @@ Project Organization
     │   └── Test_IO        <- IO tests
     │   └── Test_Models    <- Tensorflow functional or subclassing tests
     │
-    ├── exp            <- Generated analysis as HTML, PDF, LaTeX, etc.
+    ├── exp            <- Generated analysis as HTML, PDF, LaTeX, etc. Saved locally, if axes is needed , let us know
     │   ├── configs        <- Experiment config files as json
     │   ├── figures        <- Generated graphics and figures to be used in reporting
     │   ├── history        <- Tensorboard trainings history files
@@ -47,7 +47,6 @@ Evaluation-Script for Interobserver Variability and Variability between Predicti
 ------------
 ### Link to Google Colab:
 https://colab.research.google.com/drive/1-wiDHzgGkPV13ZMaZLkvk5IYZSi6U5qm?usp=sharing
-
 
 Setup native with OSX or Ubuntu
 ------------
