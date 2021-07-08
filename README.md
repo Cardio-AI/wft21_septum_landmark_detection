@@ -41,11 +41,13 @@ Project Organization
         ├── models         <- Modelzoo, Modelutils and Tensorflow layers
         ├── utils          <- Metrics, callbacks, io-utils, notebook imports
         └── visualization  <- Plots for the data, generator or evaluations
-Paper:
---------
-- link to paper if accepted
 
-- info for cite
+
+Evaluation-Script for Interobserver Variability and Variability between Predictions and Ground-Truth
+------------
+### Link to Google Colab:
+https://colab.research.google.com/drive/1-wiDHzgGkPV13ZMaZLkvk5IYZSi6U5qm?usp=sharing
+
 
 Setup native with OSX or Ubuntu
 ------------
