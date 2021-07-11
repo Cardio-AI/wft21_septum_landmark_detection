@@ -51,6 +51,15 @@ A huge thanks to Sven Köhler for his kind supervision, help and code. ✨ 🌟 
 ### Supplemental Material:
 Here you will find the presentation, the annotation guidelines and the .csv with the folds. 
 
+### Code:
+Since plenty of code was provided by our supervisor, we've outlined the scripts that we used in the order of our workflow
+Notebooks       --> Dataset --> Prepare_data
+Notebooks       --> Train --> Train_tests
+Notebooks       --> Predictions --> Prediction
+Google Colab    --> Evaluation-Script
+
+
+
 ------------
 ### Link to Google Colab:
 
