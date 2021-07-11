@@ -213,3 +213,23 @@ def bce_dice_loss(y_true, y_pred, w_bce=0.5, w_dice=1.):
 
 
     return w_bce * tf.keras.losses.binary_crossentropy(y_true, y_pred) - w_dice * dice_coef(y_true, y_pred)
+
+
+# experimental, does not work
+# def cce_dice_loss(y_true, y_pred, w_cce=0.5, w_dice=1.):
+#     """
+#     weighted binary cross entropy - dice coef loss
+#     uses all labels if shape labels == 3
+#     otherwise slice the background to ignore over-represented background class
+#     :param y_true:
+#     :param y_pred:
+#     :return:
+#     """
+
+#     # use only the labels for the loss
+#     if y_pred.shape[-1] == 4:
+#         y_pred = y_pred[...,-3:]
+#         y_true = y_true[...,-3:]
+
+
+#     return w_cce * tf.keras.losses.CategoricalCrossentropy(y_true, y_pred) - w_dice * dice_coef(y_true, y_pred)

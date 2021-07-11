@@ -81,7 +81,7 @@ def create_unet(config, metrics=None, networkname='unet', single_model=True, sup
         # define standard values according to convention over configuration paradigm
         metrics = [keras.metrics.binary_accuracy] if metrics is None else metrics
         activation = config.get('ACTIVATION', 'elu')
-        loss_f = config.get('LOSS_FUNCTION', keras.losses.categorical_crossentropy) # standard implementation of Loss function is categorical cross entropy
+        loss_f = config.get('LOSS_FUNCTION', keras.losses.categorical_crossentropy) # standard implementation of Loss function is categorical cross entropy. Theoretically better suited for our project. 
         batch_norm = config.get('BATCH_NORMALISATION', False)
         use_upsample = config.get('USE_UPSAMPLE', 'False')
         pad = config.get('PAD', 'same')
@@ -125,7 +125,7 @@ def create_unet(config, metrics=None, networkname='unet', single_model=True, sup
 
         # stacked models will be compiled later, dont return softmax or sigmoid outputs
         if single_model:
-            outputs = Conv(mask_classes, one_by_one, activation='softmax', name='unet')(outputs) # output function, could be changed to sigmoid
+            outputs = Conv(mask_classes, one_by_one, activation='sigmoid', name='unet')(outputs) # WFT Data Science: 'sigmoid' ; output function, should be adapted to softmax for better performance and coupled with a Categorical Cross Entropy  + Dice as a loss function instead of the current BCE_Dice
             model = Model(inputs=[inputs], outputs=[outputs], name=networkname)
             model.compile(optimizer=mutils.get_optimizer(config, networkname), loss={'unet': loss_f}, metrics=metrics)
         else:
