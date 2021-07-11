@@ -49,7 +49,7 @@ A huge thanks to Sven Köhler for his kind supervision, help and code. ✨ 🌟 
 #### Link to Google Colab: https://colab.research.google.com/drive/1-wiDHzgGkPV13ZMaZLkvk5IYZSi6U5qm?usp=sharing
 
 ### Supplemental Material:
-Here you will find the presentation, the annotation guidelines, a .png with information on the model and the .csv with the folds. 
+Here you will find the presentation, the annotation guidelines and the .csv with the folds. 
 
 ------------
 ### Link to Google Colab:
