@@ -47,6 +47,10 @@ We used Google-Colab for our Evaluation Script. In the `notebooks` folder you wi
 A huge thanks to Sven Köhler for his kind supervision, help and code. ✨ 🌟 💫
 ### Evaluation-Script for Interobserver Variability and Variability between Predictions and Ground-Truth
 #### Link to Google Colab: https://colab.research.google.com/drive/1-wiDHzgGkPV13ZMaZLkvk5IYZSi6U5qm?usp=sharing
+
+### Supplemental Material:
+Here you will find the presentation, the annotation guidelines and the .csv with the folds. 
+
 ------------
 ### Link to Google Colab:
 
